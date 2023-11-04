@@ -216,4 +216,55 @@ $(document).ready(function () {
       },
     },
   });
+
+  /************************************ Related Slider ************************************/
+  var relatedSwiper = new Swiper(".related-slider .swiper", {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      767: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+      1199: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+    pagination: {
+      el: ".related-slider .swiper-pagination",
+      clickable: true,
+    },
+    on: {
+      init: function (swiper) {
+        lazyLoad();
+      },
+    },
+  });
+
+  /************************************ Arrow Top ************************************/
+
+  $(window).scroll(function () {
+    $(this).scrollTop() >= 500
+      ? $(".arrow-top").fadeIn(500)
+      : $(".arrow-top").fadeOut(500);
+  });
+  $(".arrow-top").click(function () {
+    $("html,body").animate(
+      {
+        scrollTop: 0,
+      },
+      1000
+    );
+  });
 });

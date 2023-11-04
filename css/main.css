@@ -83,18 +83,19 @@ body {
   font-family: tajawal;
   font-weight: normal;
 }
-body::-webkit-scrollbar {
-  background-color: #fff;
-  width: 7px;
-  height: 0px;
-}
-body::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
-}
 
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color) #fff;
+  scroll-behavior: unset !important;
+}
+html ::-webkit-scrollbar {
+  background-color: #fff;
+  width: 7px;
+  height: 0px;
+}
+html ::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
 }
 
 .overflow {
@@ -147,7 +148,7 @@ html {
   position: absolute;
   z-index: 1;
   top: -14px;
-  right: -45px;
+  inset-inline-start: -45px;
 }
 @media (max-width: 993px) {
   .section-title::before {
@@ -1834,6 +1835,109 @@ html[dir=ltr] .custom-input::placeholder {
   height: 100%;
 }
 
+.single-img {
+  margin-bottom: 60px;
+}
+@media (max-width: 993px) {
+  .single-img {
+    margin-bottom: 40px;
+  }
+}
+
+.single-content {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 50px;
+  align-items: start;
+}
+@media (max-width: 993px) {
+  .single-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+.single-content .section-title {
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+@media (max-width: 993px) {
+  .single-content .section-title {
+    margin-bottom: 15px;
+  }
+}
+.single-content .main-info p {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-color);
+  line-height: 1.8;
+}
+.single-content .info-item {
+  display: flex;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+.single-content .info-title {
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 16px;
+  width: 125px;
+  flex-shrink: 0;
+}
+.single-content .info-value {
+  font-weight: 300;
+  color: var(--text-color);
+  font-size: 16px;
+}
+.single-content .info-share {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.single-content .share {
+  font-size: 14px;
+  color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+}
+.single-content .share:hover {
+  color: var(--primary-color);
+}
+
+.related-projects {
+  padding: 70px 0;
+}
+@media (max-width: 993px) {
+  .related-projects {
+    padding: 50px 0;
+  }
+}
+.related-projects .section-title {
+  text-align: center;
+}
+.related-projects .section-title::after {
+  margin-inline: auto;
+}
+.related-projects .section-title::before {
+  display: none;
+}
+.related-projects .project-item {
+  box-shadow: none;
+}
+.related-projects .project-item:hover {
+  box-shadow: none;
+}
+.related-projects .project-item .project-img {
+  aspect-ratio: 360/220;
+  border-radius: calc(var(--border-radius) / 2);
+  overflow: hidden;
+}
+.related-projects .project-item .project-text {
+  padding: 10px 15px 0;
+}
+.related-projects .project-item .project-name {
+  text-align: center;
+  margin: 0;
+}
+
 footer {
   position: relative;
 }
@@ -2041,4 +2145,63 @@ html[dir=ltr] .footer-list a:hover {
 }
 .copyrights a:hover {
   color: #fff;
+}
+
+.arrow-top {
+  position: fixed;
+  bottom: 80px;
+  inset-inline-start: 20px;
+  z-index: 15;
+  display: none;
+}
+.arrow-top i {
+  width: 40px;
+  height: 40px;
+  color: #808080;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 15;
+  transition: all 0.3s ease-in-out;
+}
+.arrow-top i:hover {
+  color: #fff;
+  background-color: var(--primary-color);
+}
+
+.whats-fixed-btn {
+  position: fixed;
+  bottom: 10px;
+  inset-inline-start: 10px;
+  z-index: 5;
+}
+@media (max-width: 767px) {
+  .whats-fixed-btn {
+    bottom: 10px;
+    inset-inline-start: 10px;
+  }
+}
+.whats-fixed-btn a {
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  background-color: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 36px;
+  cursor: pointer;
+  margin: 0;
+  transition: background-color 0.3s ease-in-out;
+}
+.whats-fixed-btn a:hover {
+  background-color: #075e54;
+  color: #fff;
+  text-decoration: none;
 }/*# sourceMappingURL=main.css.map */
