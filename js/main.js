@@ -47,8 +47,8 @@ $(document).ready(function () {
       if (e.isDefaultPrevented()) return;
       e.preventDefault();
       e.stopPropagation();
-      $(".has_children>a").not(this).removeClass("active");
-      $(this).toggleClass("active");
+      $(".has_children>a").not(this).removeClass("acc-active");
+      $(this).toggleClass("acc-active");
       if ($(this).siblings().css("display") == "none") {
         $(this).siblings().slideDown(500);
       } else {
